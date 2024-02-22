@@ -26,7 +26,8 @@ export const Contact = () => {
       from_email: email,
       from_name: name,
       to_name: "Leonardo",
-      message: message
+      message: message,
+      reply_to: email
     };
 
     try {
