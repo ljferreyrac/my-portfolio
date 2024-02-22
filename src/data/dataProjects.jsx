@@ -14,7 +14,7 @@ export const projects = [
             </>,
         linkDemo: '',
         backendRepo: '',
-        frontendRepo: 'https://github.com/ljferreyrac/calendar-app-frontend',
+        frontendRepo: 'https://github.com/ljferreyrac/my-portfolio',
         image: 'https://res.cloudinary.com/x-app-react-x/image/upload/v1708584675/portfolio/825078e8-61a3-42ed-ba40-5cc49442f934.png',
         description: 'My portfolio'
     },
