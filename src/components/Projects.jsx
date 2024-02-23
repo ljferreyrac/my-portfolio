@@ -18,7 +18,7 @@ export const Projects = () => {
         </div>
         <div className="flex flex-wrap -m-4">
           {projects.map((project) => (
-              <div className="flex relative m-8" style={{width: "34rem"}} key={project.image}>
+              <div className="flex relative m-8 w-72 lg:w-5/12" key={project.image}>
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
@@ -32,13 +32,13 @@ export const Projects = () => {
                     {project.skills}
                   </h2>
                   <p className="leading-relaxed">{project.description}</p>
-                  <div className="grid">
+                  <div className="grid justify-center">
                     {
                       project.linkDemo?
                       <a
                       href={project.linkDemo}
                       target="_blank"
-                      className="text-nowrap hover:text-white">
+                      className="lg:text-nowrap hover:text-white">
                         Demo: {project.linkDemo}
                       </a>
                       :''
@@ -48,7 +48,7 @@ export const Projects = () => {
                       <a
                       href={project.backendRepo}
                       target="_blank"
-                      className="text-nowrap hover:text-white">
+                      className="lg:text-nowrap hover:text-white">
                         Backend: {project.backendRepo}
                       </a>
                       :''
@@ -58,7 +58,7 @@ export const Projects = () => {
                       <a
                       href={project.frontendRepo}
                       target="_blank"
-                      className="text-nowrap hover:text-white">
+                      className="lg:text-nowrap hover:text-white">
                         Frontend: {project.frontendRepo}
                       </a>
                       :''

@@ -62,4 +62,36 @@ export const projects = [
         image: 'https://res.cloudinary.com/x-app-react-x/image/upload/v1708573846/portfolio/a508099c-1230-424f-b35d-928ad808ab9d.png',
         description: 'A web application where you can create notes and upload/attach images to them'
     },
+    {
+        title: 'Heroes App',
+        skills: 
+            <>
+                <FaReact className="h-auto text-4xl"/>
+                &nbsp; 
+                <SiJavascript className="h-auto text-4xl"/>
+                &nbsp; 
+                <FaBootstrap className="h-auto text-4xl"/>
+            </>,
+        linkDemo: 'https://leojfc-heroes-spa.netlify.app/',
+        backendRepo: '',
+        frontendRepo: 'https://github.com/ljferreyrac/heroes-single-page-app',
+        image: 'https://res.cloudinary.com/x-app-react-x/image/upload/v1708669166/portfolio/3dc44de3-ae2f-451d-a8e6-875118637060.png',
+        description: 'A web application where you can see information about some superheroes'
+    },
+    {
+        title: 'Gif App',
+        skills: 
+            <>
+                <FaReact className="h-auto text-4xl"/>
+                &nbsp; 
+                <SiJavascript className="h-auto text-4xl"/>
+                &nbsp; 
+                <FaBootstrap className="h-auto text-4xl"/>
+            </>,
+        linkDemo: 'https://gif-expert-leonardojfc.netlify.app/',
+        backendRepo: '',
+        frontendRepo: 'https://github.com/ljferreyrac/gif-expert-app',
+        image: 'https://res.cloudinary.com/x-app-react-x/image/upload/v1708663210/portfolio/64565737-06a5-4203-86c5-78f8fe55932b.png',
+        description: 'A web application where you can search as many gifs as you want'
+    },
 ]

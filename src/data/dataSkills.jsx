@@ -1,5 +1,5 @@
 import { FaAngular, FaBootstrap, FaMicrosoft, FaNodeJs, FaReact, FaVuejs } from "react-icons/fa6";
-import { SiExpress, SiFirebase, SiMicrosoftsqlserver, SiMysql, SiPostgresql, SiRedux, SiSpringboot, SiTailwindcss } from "react-icons/si";
+import { SiExpress, SiFirebase, SiJest, SiMicrosoftsqlserver, SiMysql, SiNetlify, SiPostgresql, SiRedux, SiSpringboot, SiTailwindcss, SiVercel } from "react-icons/si";
 
 export const skills = [
     {
@@ -57,5 +57,17 @@ export const skills = [
     {
         name: 'Firebase',
         icon: <SiFirebase/>
+    },
+    {
+        name: 'Vercel',
+        icon: <SiVercel/>
+    },
+    {
+        name: 'Netlify',
+        icon: <SiNetlify/>
+    },
+    {
+        name: 'Jest',
+        icon: <SiJest/>
     },
 ]

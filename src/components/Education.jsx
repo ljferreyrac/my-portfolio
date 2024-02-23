@@ -3,7 +3,7 @@ import { FaGraduationCap } from 'react-icons/fa6'
 
 export const Education = () => {
   return (
-    <section id="projects" className="text-gray-400 bg-gray-900 body-font">
+    <section id="education" className="text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
           <FaGraduationCap className="mx-auto inline-block w-10 mb-4 h-auto" />
@@ -11,9 +11,12 @@ export const Education = () => {
             My Education
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-          Below you'll find a selection of applications I've developed. 
-          Each one showcases my ability to design and build complete software solutions. 
-          Feel free to explore!
+          Currently, I am in my fourth year of the Software Engineering degree at UPC 
+          University. Throughout my academic journey, I've had the opportunity to delve 
+          into various aspects of software development and engineering principles. 
+          At UPC, I've been involved in numerous projects ranging from web development 
+          to mobile application design. I'm excited to showcase the projects 
+          I've developed and the skills I've honed during my time at the university.
           </p>
         </div>
         {/* <div className="flex flex-wrap -m-4">
