@@ -105,9 +105,9 @@ export const projects = [
                 <SiSpringboot className="h-auto text-4xl"/>
             </>,
         linkDemo: 'https://credit-car.netlify.app/',
-        backendRepo: 'https://github.com/LeonardoFerreyraC/BackEndFinanzas',
-        frontendRepo: 'https://github.com/LeonardoFerreyraC/FrontEndFinanzas',
+        backendRepo: 'https://github.com/LeonardoFerreyraC/Back-End-Finanzas',
+        frontendRepo: 'https://github.com/LeonardoFerreyraC/Front-End-Finanzas',
         image: 'https://res.cloudinary.com/x-app-react-x/image/upload/v1708712501/portfolio/cb2ca674-5889-4489-96cb-cd63d1f4bf45.png',
         description: 'Simulate your car credit and plan your finances with my app'
-    },
+    }
 ]
