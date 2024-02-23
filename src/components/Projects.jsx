@@ -18,7 +18,7 @@ export const Projects = () => {
         </div>
         <div className="flex flex-wrap -m-4">
           {projects.map((project) => (
-              <div className="flex relative m-8 w-72 lg:w-5/12" key={project.image}>
+              <div className="flex relative m-8 w-80 lg:w-5/12" key={project.image}>
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
