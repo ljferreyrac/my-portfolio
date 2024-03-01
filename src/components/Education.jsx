@@ -4,28 +4,26 @@ import { studentProjects } from '../data/dataStudentProjects'
 import { studentSkills } from '../data/dataStudentSkills'
 import { HiCheckBadge } from 'react-icons/hi2'
 import { institutions } from '../data/dataEducation'
+import { useTranslation } from 'react-i18next'
 
 export const Education = () => {
+
+  const {t} = useTranslation();
   return (
     <section id="education" className="text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
           <FaGraduationCap className="mx-auto inline-block w-10 mb-4 h-auto" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
-            My Education
+            {t("Education.Title")}
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-          Currently, I am in my fourth year of the Software Engineering degree at UPC 
-          University. Throughout my academic journey, I've had the opportunity to delve 
-          into various aspects of software development and engineering principles. 
-          At UPC, I've been involved in numerous projects ranging from web development 
-          to mobile application design. I'm excited to showcase the projects 
-          I've developed and the skills I've honed during my time at the university.
+            {t("Education.Description")}
           </p>
         </div>
         <div className="grid flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 justify-center">
-          {institutions.map((institution) => (
-            <div className='justify-center relative m-8 w-60' key={institution.image}>
+          {institutions().map((institution) => (
+            <div className='justify-center relative m-8 w-64' key={institution.image}>
               <img
                 alt="intitution"
                 className='w-full h-auto'
@@ -35,12 +33,12 @@ export const Education = () => {
                 {institution.description}
               </p>
               <p className="my-2 leading-relaxed text-base">
-                Date Start: {institution.dateStart}
+                {t("Education.EducationItem.DateStart")} {institution.dateStart}
               </p>
               {
                 institution.dateFinished?
                 <p className="my-2 leading-relaxed text-base">
-                  Date Finished: {institution.dateFinished}
+                  {t("Education.EducationItem.DateEnd")} {institution.dateFinished}
                 </p>
                 :
                 ""
@@ -48,7 +46,7 @@ export const Education = () => {
               {
                 institution.dateExpected?
                 <p className="my-2 leading-relaxed text-base">
-                  Date Expected to finish: {institution.dateExpected}
+                  {t("Education.EducationItem.DateExpected")} {institution.dateExpected}
                 </p>
                 :
                 ""
@@ -58,7 +56,7 @@ export const Education = () => {
           ))}
         </div>
         <div className="flex justify-center flex-wrap -m-4">
-          {studentProjects.map((project) => (
+          {studentProjects().map((project) => (
               <div className="flex relative m-6 w-80 lg:w-5/12 lg:m-8" key={project.image}>
                 <img
                   alt="gallery"

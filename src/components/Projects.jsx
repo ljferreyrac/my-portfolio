@@ -1,30 +1,31 @@
 import { HiCodeBracket } from "react-icons/hi2";
 import { projects } from "../data/dataProjects";
+import { useTranslation } from "react-i18next";
 
 export const Projects = () => {
+
+  const {t} = useTranslation();
   return (
     <section id="projects" className="text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
           <HiCodeBracket className="mx-auto inline-block w-10 mb-4 h-auto" />
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
-            Apps I've built
+            {t("Projects.Title")}
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-          Below you'll find a selection of applications I've developed. 
-          Each one showcases my ability to design and build complete software solutions. 
-          Feel free to explore!
+            {t("Projects.Description")}
           </p>
         </div>
         <div className="flex flex-wrap justify-center -m-4">
-          {projects.map((project) => (
-              <div className="flex relative m-6 w-80 lg:w-5/12 lg:m-8" key={project.image}>
+          {projects().map((project) => (
+              <div className="flex relative m-6 w-80 md:w-5/12 md:m-8" key={project.image}>
                 <img
                   alt="gallery"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   src={project.image}
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
+                <div className="px-8 py-10 relative z-5 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
                   <h1 className="title-font text-lg font-medium text-white mb-3">
                     {project.title}
                   </h1>
