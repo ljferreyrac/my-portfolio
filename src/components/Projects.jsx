@@ -1,75 +1,133 @@
-import { HiCodeBracket } from "react-icons/hi2";
+import {
+  HiCodeBracket,
+  HiArrowTopRightOnSquare,
+  HiCodeBracketSquare,
+} from "react-icons/hi2";
 import { projects } from "../data/dataProjects";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
+  const { t } = useTranslation();
 
-  const {t} = useTranslation();
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const projectVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <section id="projects" className="text-gray-400 bg-gray-900 body-font">
-      <div className="container px-5 py-10 mx-auto text-center lg:px-40">
-        <div className="flex flex-col w-full mb-20">
-          <HiCodeBracket className="mx-auto inline-block w-10 mb-4 h-auto" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-b from-gray-900 to-gray-800"
+    >
+      <div className="container px-4 mx-auto">
+        <motion.div
+          className="max-w-3xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
+            <HiCodeBracket className="w-12 h-12 text-green-500" />
+          </motion.div>
+
+          <h2 className="text-4xl font-bold text-white mb-6">
             {t("Projects.Title")}
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            {t("Projects.Description")}
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center -m-4">
+          </h2>
+          <p className="text-xl text-gray-300">{t("Projects.Description")}</p>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projects().map((project) => (
-              <div className="flex relative m-6 w-80 md:w-5/12 md:m-8" key={project.image}>
+            <motion.div
+              key={project.title}
+              variants={projectVariants}
+              className="group relative overflow-hidden rounded-xl bg-gray-800"
+            >
+              <div className="relative h-64 overflow-hidden">
                 <img
-                  alt="gallery"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
                   src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="px-8 py-10 relative z-5 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h1 className="title-font text-lg font-medium text-white mb-3">
-                    {project.title}
-                  </h1>
-                  <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1 flex justify-center">
-                    {project.skills}
-                  </h2>
-                  <p className="leading-relaxed">{project.description}</p>
-                  <div className="grid justify-center">
-                    {
-                      project.linkDemo?
-                      <a
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {project.title}
+                </h3>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.skills}
+                </div>
+                <p className="text-gray-300 mb-4">{t(project.description)}</p>
+
+                <div className="flex flex-wrap gap-4">
+                  {project.linkDemo && (
+                    <a
                       href={project.linkDemo}
                       target="_blank"
-                      className="lg:text-nowrap hover:text-white">
-                        Demo: {project.linkDemo}
-                      </a>
-                      :''
-                    }
-                    {
-                      project.backendRepo?
-                      <a
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+                    >
+                      <HiArrowTopRightOnSquare className="w-5 h-5" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
+                  {project.backendRepo && (
+                    <a
                       href={project.backendRepo}
                       target="_blank"
-                      className="lg:text-nowrap hover:text-white">
-                        Backend: {project.backendRepo}
-                      </a>
-                      :''
-                    }
-                    {
-                      project.frontendRepo?
-                      <a
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                    >
+                      <HiCodeBracketSquare className="w-5 h-5" />
+                      <span>Backend</span>
+                    </a>
+                  )}
+                  {project.frontendRepo && (
+                    <a
                       href={project.frontendRepo}
                       target="_blank"
-                      className="lg:text-nowrap hover:text-white">
-                        Frontend: {project.frontendRepo}
-                      </a>
-                      :''
-                    }
-                  </div>
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                    >
+                      <HiCodeBracketSquare className="w-5 h-5" />
+                      <span>Frontend</span>
+                    </a>
+                  )}
                 </div>
               </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
